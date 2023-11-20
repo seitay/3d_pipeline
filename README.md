@@ -65,6 +65,9 @@ python downsample.py /path/to/image.ims ims /path/to/temp_dir_4059c0 -res 50.0 -
 ```sh
 python registration.py /path/to/target.npz /path/to/outdir /path/to/annotation.vtk file_name /path/to/atlas /path/to/template
 ```
+```sh
+python  obj_maker.py  --input /path/to/structure_000000000997_surface_root.npz --output /path/to/outdir  --translation='x,y,z' --rotation_matrix='x1,y1,z1,x2,y2,z3,x3,y3,z3'
+```
 
 launch script usage
 ```sh
@@ -78,4 +81,21 @@ launch_slurm_3d_registration.sh $target_name $output_dir $seg_name $output_file 
 <!-- Testing -->
 ## Tests
 
-These are in progress
+Setup testing environment using conda. 
+
+Important: Python (and Pytest) must use Python version 3.6 and above.
+
+1. Create virtual environment using conda
+   ```sh
+   conda env create -f environment.yml
+   ```
+
+2. Activate conda environment
+   ```sh
+   conda activate 3d_pipeline_pytest
+   ```
+
+3. Run tests
+   ```sh
+   pytest -s
+   ```

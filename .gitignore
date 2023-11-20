@@ -3,8 +3,8 @@
 *.jpg
 *.npz
 *.sif
-emlddmm.py
 testing/
 logs/
 *.log
 results/
+launch_scripts/
